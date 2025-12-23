@@ -7,11 +7,11 @@ on:
       tag:
         description: '请填写发布Releases的版本号（留空不发布）'
         required: false
-        default: 'easytier-v2.4.5_x86_64_openwrt-24.10.0_1'
+        default: 'easytier-v2.4.5_mipsel_24kc_openwrt-24.10.2_1'
       text:
         description: '请填写发布的说明'
         required: false
-        default: 'x86_64_openwrt-24.10.0版本'
+        default: 'mipsel_24kc_openwrt-24.10.2版本'
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -47,14 +47,14 @@ jobs:
           #- mips_24kc
           #- mips_4kec
           #- mips_mips32
-          #- mipsel_24kc
+          - mipsel_24kc
           #- mipsel_24kc_24kf
           #- mipsel_74kc
           #- mipsel_mips32
-          - x86_64
+          #- x86_64
           
         sdk:
-          - 24.10.0
+          - 24.10.2
           #- SNAPSHOT
 
     steps:
